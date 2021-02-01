@@ -17,8 +17,7 @@ $GLOBALS['config'] = array(
         'sessionName' => 'user'
     )
 );
-
-
+require_once("./templates/header.php");
 require_once("./classes/config.class.php");
 require_once("./classes/cookie.class.php");
 require_once("./classes/db.class.php");

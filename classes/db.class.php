@@ -90,6 +90,26 @@ class DB {
         }
         return false;        
     }
+    public function update($table , $id ,$fields){
+        $set = '';
+        $x = 1;
+
+        foreach($fields as $name =>$value){
+            $set = $set . "{$name} = ?";
+            if ($x < count($fields)){
+                $set = $set . ", ";
+            }
+            $x++;
+        }
+        //die($set);
+
+        $sql = "UPDATE {$table} SET {$set} WHERE id={$id}";
+        echo $sql;
+        if(!$this->query($sql,$fields)->error()){
+            return true;
+        }
+    return false; 
+    }
 
     public function count(){
         return $this->_count ;

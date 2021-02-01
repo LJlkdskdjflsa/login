@@ -1,4 +1,5 @@
 <?php
+    
 require_once("./core/init.php");
 //echo Config::get('mysql/host'); //127.0.0.1
 /*
@@ -13,4 +14,5 @@ if($users->count()){
 //$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?",array('alex'));
 //$user = DB::getInstance()->get('users',array('username', '=','alex'));
 //$user = DB::getInstance()->query('SELECT * FROM users');
-$user = DB::getInstance()->insert('users',array('username'=>'dale','password'=>'dalepass','salt'=>'salt','name'=>'dale'));
+//$user = DB::getInstance()->insert('users',array('username'=>'dale','password'=>'dalepass','salt'=>'salt','name'=>'dale'));
+$user = DB::getInstance()->update('users',3,array('password'=>'newpass'));

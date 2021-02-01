@@ -10,9 +10,10 @@ if($users->count()){
 }
 */
 
-$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?",array('alex'));
+//$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?",array('alex'));
+$user = DB::getInstance()->get('users',array('username', '=','alex'));
 
-if ($user->error()){
+if ($user->count()){
     echo "no user";
 }else{
     echo "OK";

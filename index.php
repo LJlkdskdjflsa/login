@@ -11,10 +11,6 @@ if($users->count()){
 */
 
 //$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?",array('alex'));
-$user = DB::getInstance()->get('users',array('username', '=','alex'));
-
-if ($user->count()){
-    echo "no user";
-}else{
-    echo "OK";
-}
+//$user = DB::getInstance()->get('users',array('username', '=','alex'));
+//$user = DB::getInstance()->query('SELECT * FROM users');
+$user = DB::getInstance()->insert('users',array('username'=>'dale','password'=>'dalepass','salt'=>'salt','name'=>'dale'));

@@ -66,8 +66,36 @@ class DB {
         return $this->action('DELETE',$table,$where);
     }
 
+    public function insert($table,$fields=array()){
+        if(count($fields)){
+            $keys = array_keys($fields);
+            $values = '';
+            $x = 1;
+            foreach($fields as $field){
+                $values = $values . '?';// .= 字串連接
+                if ($x < count($fields)){
+                    $values =  $values . ", ";
+                }
+                $x++;
+            }
+
+            $sql = "INSERT INTO users (`" . implode('`,`',$keys) . "`) VALUES ({$values})";
+            //echo $sql;
+            // echo $values;
+            // echo $x;
+            // echo count($fields);
+            if(!$this->query($sql,$fields)->error()){
+                return true;
+            }
+        }
+        return false;        
+    }
+
     public function count(){
         return $this->_count ;
+    }
+    public function results(){
+        return $this->_results ;
     }
 
     public function error(){

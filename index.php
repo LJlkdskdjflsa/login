@@ -15,4 +15,9 @@ if($users->count()){
 //$user = DB::getInstance()->get('users',array('username', '=','alex'));
 //$user = DB::getInstance()->query('SELECT * FROM users');
 //$user = DB::getInstance()->insert('users',array('username'=>'dale','password'=>'dalepass','salt'=>'salt','name'=>'dale'));
-$user = DB::getInstance()->update('users',3,array('password'=>'newpass'));
+//$user = DB::getInstance()->update('users',3,array('password'=>'newpass'));
+
+if(Session::exists('success')){
+    echo '<p>';
+    echo Session::flash('success');
+}

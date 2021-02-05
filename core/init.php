@@ -14,7 +14,8 @@ $GLOBALS['config'] = array(
         'cookieExpiry' => 604800
     ),
     'session' => array(
-        'sessionName' => 'user'
+        'sessionName' => 'user',
+        'tokenName' => 'token'
     )
 );
 require_once("./templates/header.php");
@@ -27,5 +28,5 @@ require_once("./classes/redirect.class.php");
 require_once("./classes/session.class.php");
 require_once("./classes/token.class.php");
 require_once("./classes/user.class.php");
-require_once("./classes/validation.class.php");
+require_once("./classes/validate.class.php");
 

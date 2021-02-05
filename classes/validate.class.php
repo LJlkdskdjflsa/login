@@ -10,6 +10,7 @@ class Validate{
             foreach($rules as $rule => $ruleValue){
                 //echo "{$item} {$rule} must be {$ruleValue}<br>";
                 $value = trim($source[$item]);
+                //$item = escape($item);
                 //echo $value ;
                 //echo $source[$item] . "  ";
                 if($rule === 'required' && empty($value)){
